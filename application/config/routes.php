@@ -50,11 +50,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'reehat';
+// Auth
 $route['auth/login/pengurus'] = 'auth/login_admin';
+$route['auth/login/pengguna'] = 'auth/login_user';
+$route['auth/register/pengguna'] = 'auth/register_user';
+
+// Admin
 $route['admin/my-profile'] = 'admin/my_profile';
 $route['admin/webinar/create'] = 'admin/webinar_create';
 $route['admin/webinar/edit/id'] = 'admin/webinar_edit';
 $route['admin/artikel/create'] = 'admin/artikel_create';
 $route['admin/artikel/edit/id'] = 'admin/artikel_edit';
+
+// User
+$route['user/my-profile'] = 'user/my_profile';
+$route['user/time-management'] = 'user/time_management';
+$route['user/time-management/create'] = 'user/time_management_create';
+$route['user/time-management/(:any)'] = 'user/time_management_list';
+$route['user/pembayaran/(:any)'] = 'user/payment';
+$route['user/webinar/(:any)'] = 'user/webinar_detail';
+$route['user/artikel/(:any)'] = 'user/artikel_detail';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
