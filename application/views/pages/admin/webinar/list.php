@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-xl-12 col-lg-12 col-md-12">
+        <?= $this->session->flashdata('webinar_msg'); ?>
         <div class="dashboard_wrap">
-            
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 mb-4">
                     <h6 class="m-0">Webinar <a href="<?= base_url('admin/webinar/create'); ?>" class="badge badge-primary">Tambah Data</a></h6>
@@ -22,26 +22,26 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Foreach Webinar -->
+                                <?php foreach($webinars->result() as $webinar): ?>
                                 <tr>
-                                    <td><a href="<?= base_url('assets/img/webinar/webinar_1.png'); ?>" data-fancybox><img src="<?= base_url('assets/img/webinar/webinar_1.png'); ?>" class="img-fluid" width="80" alt="" /></a></td>
-                                    <td><div class="smalls lg">Mengatasi Stress Akibat Tekanan Kerja</div></td>
-                                    <td><div class="smalls lg">Unknown</div></td>
-                                    <td><span class="smalls lg">22 Juni 2022</span></td>
-                                    <td><span class="smalls lg">22 Juni 2022</span></td>
+                                    <td><a href="<?= base_url('assets/img/webinar'); ?>/<?= $webinar->thumbnail ?>" data-fancybox><img src="<?= base_url('assets/img/webinar'); ?>/<?= $webinar->thumbnail ?>" class="img-fluid" width="80" alt="" /></a></td>
+                                    <td><div class="smalls lg"><?= $webinar->title ?></div></td>
+                                    <td><div class="smalls lg"><?= $webinar->mentor ?></div></td>
+                                    <td><span class="smalls lg"><?= $webinar->updated_at ?></span></td>
+                                    <td><span class="smalls lg"><?= $webinar->created_at ?></span></td>
                                     <td>
                                         <div class="dropdown show">
                                             <a class="btn btn-action" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <i class="fas fa-ellipsis-h"></i>
                                             </a>
                                             <div class="drp-select dropdown-menu">
-                                                <a class="dropdown-item" href="<?= base_url('admin/webinar/edit/id'); ?>">Edit</a>
-                                                <a class="dropdown-item" href="<?= base_url('admin/webinar/delete/id'); ?>" onclick="return confirm('Yakin ingin menghapus data?')">Delete</a>
+                                                <a class="dropdown-item" href="<?= base_url('admin/webinar/edit'); ?>/<?= $webinar->id ?>">Edit</a>
+                                                <a class="dropdown-item" href="<?= base_url('admin/webinar/delete'); ?>/<?= $webinar->id ?>" onclick="return confirm('Yakin ingin menghapus data?')">Delete</a>
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
-                                <!-- End Foreach -->
+                                <?php endforeach ?>
                             </tbody>
                         </table>
                     </div>

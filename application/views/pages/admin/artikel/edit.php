@@ -3,7 +3,7 @@
         <div class="dashboard_wrap">
             
             <div class="form_blocs_wrap">
-                <form action="<?= base_url('admin/artikel/create-backend'); ?>" method="POST" enctype="multipart/form-data">
+                <form action="<?= base_url('admin/artikel/edit-backend'); ?>/<?= $artikel['id']; ?>" method="POST" enctype="multipart/form-data">
                     <div class="row justify-content-between">
                         <div class="col-lg-12 col-md-7 col-sm-12">
                                 
@@ -12,14 +12,14 @@
                                     
                                     <div class="form-group smalls">
                                         <label>Judul</label>
-                                        <input type="text" class="form-control" name="title">
-                                        <!-- Validation Title -->
+                                        <input type="text" class="form-control" name="title" value="<?= $artikel['title']; ?>">
+                                        <?= form_error('title','<p class="text-danger">','</p>'); ?>
                                     </div>
                                     
                                     <div class="form-group smalls">
                                         <label>Description</label>
-                                        <textarea class="summernote" name="description"></textarea>
-                                        <!-- Validation Description -->
+                                        <textarea class="summernote" name="description"><?= $artikel['description']; ?></textarea>
+                                        <?= form_error('description','<p class="text-danger">','</p>'); ?>
                                     </div>
 
                                     <div class="form-group smalls">

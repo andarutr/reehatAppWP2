@@ -3,7 +3,7 @@
         <div class="dashboard_wrap">
             
             <div class="form_blocs_wrap">
-                <form action="<?= base_url('admin/webinar/edit-backend'); ?>" method="POST" enctype="multipart/form-data">
+                <form action="<?= base_url('admin/webinar/edit-backend'); ?>/<?= $webinar['id']; ?>" method="POST" enctype="multipart/form-data">
                     <div class="row justify-content-between">
                         <div class="col-lg-12 col-md-7 col-sm-12">
                                 
@@ -12,32 +12,27 @@
                                     
                                     <div class="form-group smalls">
                                         <label>Judul</label>
-                                        <input type="text" class="form-control" name="title">
-                                        <!-- Validation Title -->
+                                        <input type="text" class="form-control" name="title" value="<?= $webinar['title']; ?>">
                                     </div>
                                     
                                     <div class="form-group smalls">
                                         <label>Pembicara</label>
-                                        <input type="text" class="form-control" name="mentor">
-                                        <!-- Validation Mentor -->
+                                        <input type="text" class="form-control" name="mentor" value="<?= $webinar['mentor']; ?>">
                                     </div>
                                     
                                     <div class="form-group smalls">
                                         <label>Harga</label>
-                                        <input type="text" class="form-control" name="cost">
-                                        <!-- Validation Harga -->
+                                        <input type="text" class="form-control" name="cost" value="<?= $webinar['cost']; ?>">
                                     </div>
                                     
                                     <div class="form-group smalls">
                                         <label>Video URL</label>
-                                        <input type="text" class="form-control" name="video_url">
-                                        <!-- Validation Video Url -->
+                                        <input type="text" class="form-control" name="video_url" value="<?= $webinar['video_url']; ?>">
                                     </div>
 
                                     <div class="form-group smalls">
                                         <label>Description</label>
-                                        <textarea class="summernote" name="description"></textarea>
-                                        <!-- Validation Description -->
+                                        <textarea class="summernote" name="description"><?= $webinar['description']; ?></textarea>
                                     </div>
 
                                     <div class="form-group smalls">
@@ -45,7 +40,6 @@
                                         <div class="custom-file">
                                           <input type="file" class="custom-file-input" id="customFile" name="thumbnail">
                                           <label class="custom-file-label" for="customFile">Choose file</label>
-                                          <!-- Validation Thumbnail -->
                                         </div>
                                     </div>
                                     <button class="btn btn-success">Edit</button>

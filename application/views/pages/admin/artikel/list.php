@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-xl-12 col-lg-12 col-md-12">
+        <?= $this->session->flashdata('artikel_msg'); ?>
         <div class="dashboard_wrap">
-            
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 mb-4">
                     <h6 class="m-0">Artikel <a href="<?= base_url('admin/artikel/create'); ?>" class="badge badge-primary">Tambah Data</a></h6>
@@ -21,25 +21,25 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Foreach Artikel -->
+                                <?php foreach($articles->result() as $artikel): ?>
                                 <tr>
-                                    <td><a href="<?= base_url('assets/img/artikel/artikel_1.jpg'); ?>" data-fancybox><img src="<?= base_url('assets/img/artikel/artikel_1.jpg'); ?>" class="img-fluid" width="80" alt="" /></a></td>
-                                    <td><div class="smalls lg">Teknik Belajar Dengan Pomodoro</div></td>
-                                    <td><span class="smalls lg">12 Maret 2022</span></td>
-                                    <td><span class="smalls lg">12 Maret 2022</span></td>
+                                    <td><a href="<?= base_url('assets/img/artikel'); ?>/<?= $artikel->picture ?>" data-fancybox><img src="<?= base_url('assets/img/artikel') ?>/<?= $artikel->picture; ?>" class="img-fluid" width="80" alt="" /></a></td>
+                                    <td><div class="smalls lg"><?= $artikel->title ?></div></td>
+                                    <td><span class="smalls lg"><?= $artikel->updated_at ?></span></td>
+                                    <td><span class="smalls lg"><?= $artikel->created_at ?></span></td>
                                     <td>
                                         <div class="dropdown show">
                                             <a class="btn btn-action" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <i class="fas fa-ellipsis-h"></i>
                                             </a>
                                             <div class="drp-select dropdown-menu">
-                                                <a class="dropdown-item" href="<?= base_url('admin/artikel/edit/id'); ?>">Edit</a>
-                                                <a class="dropdown-item" href="<?= base_url('admin/artikel/delete/id'); ?>" onclick="return confirm('Yakin ingin menghapus data?')">Delete</a>
+                                                <a class="dropdown-item" href="<?= base_url('admin/artikel/edit'); ?>/<?= $artikel->id ?>">Edit</a>
+                                                <a class="dropdown-item" href="<?= base_url('admin/artikel/delete'); ?>/<?= $artikel->id ?>" onclick="return confirm('Yakin ingin menghapus data?')">Delete</a>
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
-                                <!-- End Foreach -->
+                                <?php endforeach ?>
                             </tbody>
                         </table>
                     </div>

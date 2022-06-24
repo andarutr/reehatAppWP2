@@ -12,32 +12,32 @@
                                     
                                     <div class="form-group smalls">
                                         <label>Judul</label>
-                                        <input type="text" class="form-control" name="title">
-                                        <!-- Validation Title -->
+                                        <input type="text" class="form-control" name="title" value="<?=set_value('title')?>">
+                                        <?= form_error('title','<p class="text-danger">','</p>'); ?>
                                     </div>
                                     
                                     <div class="form-group smalls">
                                         <label>Pembicara</label>
-                                        <input type="text" class="form-control" name="mentor">
-                                        <!-- Validation Mentor -->
+                                        <input type="text" class="form-control" name="mentor" value="<?=set_value('mentor')?>">
+                                        <?= form_error('mentor','<p class="text-danger">','</p>'); ?>
                                     </div>
                                     
                                     <div class="form-group smalls">
                                         <label>Harga</label>
-                                        <input type="text" class="form-control" name="cost">
-                                        <!-- Validation Harga -->
+                                        <input type="text" class="form-control" name="cost" value="<?=set_value('cost')?>">
+                                        <?= form_error('cost','<p class="text-danger">','</p>'); ?>
                                     </div>
                                     
                                     <div class="form-group smalls">
                                         <label>Video URL</label>
-                                        <input type="text" class="form-control" name="video_url">
-                                        <!-- Validation Video Url -->
+                                        <input type="text" class="form-control" name="video_url" value="<?=set_value('video_url')?>">
+                                        <?= form_error('video_url','<p class="text-danger">','</p>'); ?>
                                     </div>
 
                                     <div class="form-group smalls">
                                         <label>Description</label>
-                                        <textarea class="summernote" name="description"></textarea>
-                                        <!-- Validation Description -->
+                                        <textarea class="summernote" name="description"><?= set_value('description') ?></textarea>
+                                        <?= form_error('description','<p class="text-danger">','</p>'); ?>
                                     </div>
 
                                     <div class="form-group smalls">
@@ -45,7 +45,6 @@
                                         <div class="custom-file">
                                           <input type="file" class="custom-file-input" id="customFile" name="thumbnail">
                                           <label class="custom-file-label" for="customFile">Choose file</label>
-                                          <!-- Validation Thumbnail -->
                                         </div>
                                     </div>
                                     <button class="btn btn-primary">Create</button>

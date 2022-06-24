@@ -1,8 +1,8 @@
 <div class="col-lg-3 col-md-3">
     <div class="dashboard-navbar">
         <div class="d-user-avater">
-            <img src="<?= base_url('assets/img/account/00870045.jpg'); ?>" class="img-fluid avater" width="250" height="250">
-            <h4>Admin</h4>
+            <img src="<?= base_url('assets/img/account'); ?>/<?= $user['picture']; ?>" class="img-fluid avater" width="250" height="250">
+            <h4><?= $user['full_name']; ?></h4>
             <span>Pengurus</span>
             <div class="elso_syu89">
                 <ul>

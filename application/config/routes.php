@@ -52,15 +52,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'reehat';
 // Auth
 $route['auth/login/pengurus'] = 'auth/login_admin';
+$route['auth/login/pengurus-backend'] = 'auth/login_admin';
 $route['auth/login/pengguna'] = 'auth/login_user';
 $route['auth/register/pengguna'] = 'auth/register_user';
+$route['auth/logout'] = 'auth/logout';
 
 // Admin
 $route['admin/my-profile'] = 'admin/my_profile';
+$route['admin/my-profile-backend'] = 'admin/my_profile';
+$route['admin/ganti-password'] = 'admin/change_password';
 $route['admin/webinar/create'] = 'admin/webinar_create';
-$route['admin/webinar/edit/id'] = 'admin/webinar_edit';
+$route['admin/webinar/create-backend'] = 'admin/webinar_create';
+$route['admin/webinar/edit/(:num)'] = 'admin/webinar_edit/$1';
+$route['admin/webinar/edit-backend/(:num)'] = 'admin/webinar_edit/$1';
+$route['admin/webinar/delete/(:num)'] = 'admin/webinar_delete/$1';
 $route['admin/artikel/create'] = 'admin/artikel_create';
-$route['admin/artikel/edit/id'] = 'admin/artikel_edit';
+$route['admin/artikel/create-backend'] = 'admin/artikel_create';
+$route['admin/artikel/edit/(:num)'] = 'admin/artikel_edit/$1';
+$route['admin/artikel/edit-backend/(:num)'] = 'admin/artikel_edit/$1';
+$route['admin/artikel/delete/(:num)'] = 'admin/artikel_delete/$1';
+$route['admin/pembayaran/delete/(:num)'] = 'admin/payment_delete/$1';
 
 // User
 $route['user/my-profile'] = 'user/my_profile';

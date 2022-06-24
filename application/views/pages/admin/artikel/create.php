@@ -12,14 +12,14 @@
                                     
                                     <div class="form-group smalls">
                                         <label>Judul</label>
-                                        <input type="text" class="form-control" name="title">
-                                        <!-- Validation Title -->
+                                        <input type="text" class="form-control" name="title" value="<?=set_value('title')?>">
+                                        <?= form_error('title','<p class="text-danger">','</p>'); ?>
                                     </div>
                                     
                                     <div class="form-group smalls">
                                         <label>Description</label>
-                                        <textarea class="summernote" name="description"></textarea>
-                                        <!-- Validation Description -->
+                                        <textarea class="summernote" name="description"><?= set_value('description'); ?></textarea>
+                                        <?= form_error('description','<p class="text-danger">','</p>'); ?>
                                     </div>
 
                                     <div class="form-group smalls">
