@@ -10,22 +10,22 @@
             </div>
             
             <div class="row">
-                <!-- Foreach Artikel -->
+                <?php foreach($articles->result() as $artikel): ?>
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
                     <div class="th_sety">
                         <div class="th_sety_thumb">
-                            <a href="<?= base_url('user/artikel/detail'); ?>">
-                                <img src="<?= base_url('assets/img/artikel/artikel_1.jpg'); ?>" class="img-fluid rounded" alt="" />
+                            <a href="<?= base_url('user/artikel'); ?>/<?= $artikel->url ?>">
+                                <img src="<?= base_url('assets/img/artikel'); ?>/<?= $artikel->picture ?>" class="img-fluid rounded" alt="" />
                             </a>
                         </div>
                         <div class="th_sety_caption">
-                            <h5><a href="<?= base_url('user/artikel/detail'); ?>">Teknik Belajar Dengan Pomodoro</a></h5>
-                            <p>12 Maret 2022</p>
-                            <a href="<?= base_url('user/artikel/detail'); ?>" class="them_sct active mt-4 mb-2"><i class="fas fa-book mr-1"></i>Selengkapnya</a>
+                            <h5><a href="<?= base_url('user/artikel'); ?>/<?= $artikel->url ?>"><?= $artikel->title ?></a></h5>
+                            <p><?= $artikel->created_at ?></p>
+                            <a href="<?= base_url('user/artikel'); ?>/<?= $artikel->url ?>" class="them_sct active mt-4 mb-2"><i class="fas fa-book mr-1"></i>Selengkapnya</a>
                         </div>
                     </div>
                 </div>
-                <!-- End Foreach -->
+                <?php endforeach ?>
             </div>
         </div>
         <!-- Pagination -->

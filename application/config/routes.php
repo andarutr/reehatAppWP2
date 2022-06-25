@@ -54,7 +54,9 @@ $route['default_controller'] = 'reehat';
 $route['auth/login/pengurus'] = 'auth/login_admin';
 $route['auth/login/pengurus-backend'] = 'auth/login_admin';
 $route['auth/login/pengguna'] = 'auth/login_user';
+$route['auth/login/pengguna-backend'] = 'auth/login_user';
 $route['auth/register/pengguna'] = 'auth/register_user';
+$route['auth/register/pengguna-backend'] = 'auth/register_user';
 $route['auth/logout'] = 'auth/logout';
 
 // Admin
@@ -75,12 +77,16 @@ $route['admin/pembayaran/delete/(:num)'] = 'admin/payment_delete/$1';
 
 // User
 $route['user/my-profile'] = 'user/my_profile';
+$route['user/my-profile-backend'] = 'user/my_profile';
+$route['user/ganti-password'] = 'user/change_password';
 $route['user/time-management'] = 'user/time_management';
 $route['user/time-management/create'] = 'user/time_management_create';
-$route['user/time-management/(:any)'] = 'user/time_management_list';
-$route['user/pembayaran/(:any)'] = 'user/payment';
-$route['user/webinar/(:any)'] = 'user/webinar_detail';
-$route['user/artikel/(:any)'] = 'user/artikel_detail';
+$route['user/time-management/delete/(:num)'] = 'user/time_management_delete/$1';
+$route['user/time-management/(:any)'] = 'user/time_management_list/$1';
+$route['user/pembayaran'] = 'user/payment_view';
+$route['user/pembayaran/(:any)'] = 'user/payment/$1';
+$route['user/webinar/(:any)'] = 'user/webinar_detail/$1';
+$route['user/artikel/(:any)'] = 'user/artikel_detail/$1';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

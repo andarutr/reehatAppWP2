@@ -16,23 +16,23 @@
                                 <div class="Lpo09"><h4>Register Pengguna</h4></div>
                                 <div class="form-group">
                                     <label>Nama Lengkap</label>
-                                    <input type="text" class="form-control" name="full_name" placeholder="Masukkan Nama Lengkap">
-                                    <!-- Validation Full Name -->
+                                    <input type="text" class="form-control" name="full_name" placeholder="Masukkan Nama Lengkap" value="<?=set_value('full_name')?>">
+                                    <?= form_error('full_name','<p class="text-danger">','</p>'); ?>
                                 </div>
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input type="text" class="form-control" name="email" placeholder="Masukkan Email">
-                                    <!-- Validation Email -->
+                                    <input type="text" class="form-control" name="email" placeholder="Masukkan Email" value="<?=set_value('email')?>">
+                                    <?= form_error('email','<p class="text-danger">','</p>'); ?>
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>
                                     <input type="password" class="form-control" name="password" placeholder="Masukkan Password" />
-                                    <!-- Validation Password -->
+                                    <?= form_error('password','<p class="text-danger">','</p>'); ?>
                                 </div>
                                 <div class="form-group">
                                     <label>Konfirmasi Password</label>
                                     <input type="password" class="form-control" name="confirm_password" placeholder="Masukkan Konfirmasi Password" />
-                                    <!-- Validation Confrim Password -->
+                                    <?= form_error('confirm_password','<p class="text-danger">','</p>'); ?>
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn full-width btn-md theme-bg text-white mt-3 mb-5">Register</button>

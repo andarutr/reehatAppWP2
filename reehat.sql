@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.7
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Waktu pembuatan: 22 Jun 2022 pada 14.41
--- Versi server: 10.3.35-MariaDB
--- Versi PHP: 7.4.29
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 25 Jun 2022 pada 09.04
+-- Versi server: 10.4.20-MariaDB
+-- Versi PHP: 7.4.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `andarutr_reehat`
+-- Database: `reehat`
 --
 
 -- --------------------------------------------------------
@@ -77,8 +76,8 @@ CREATE TABLE `payments` (
 --
 
 INSERT INTO `payments` (`id`, `user_id`, `webinar`, `cost`, `name_user`, `picture_user`, `status`, `url`, `updated_at`, `created_at`) VALUES
-(1, 3, 'Mengatasi Trauma Inner Child', 85000, 'Syifa', 'default.png', 'Belum Bayar', 'mengatasi-trauma-inner-child', '13 June 2022', '13 June 2022'),
-(2, 3, 'Mengatasi Sifat Perfeksionis Dan Merubahnya Menjadi Potensi', 85000, 'Melda Yusnita', 'melda.jpeg', 'Belum Bayar', 'mengatasi-sifat-perfeksionis-dan-merubahnya-menjadi-potensi', '22 June 2022', '22 June 2022');
+(4, 2, 'Mengatasi Trauma Inner Child', 85000, 'Melda Yusnita', 'melda.jpeg', 'Belum Bayar', 'mengatasi-trauma-inner-child', '12 June 2022', '12 June 2022'),
+(5, 5, 'Menuju Hidup Produktif Dan Sehat Mental', 85000, 'Farhan Ardiansyah', 'default.png', 'Sudah Bayar', 'menuju-hidup-produktif-dan-sehat-mental', '25 June 2022', '25 June 2022');
 
 -- --------------------------------------------------------
 
@@ -120,12 +119,14 @@ CREATE TABLE `time_management` (
 --
 
 INSERT INTO `time_management` (`id`, `user_id`, `aplikasi`, `batas_penggunaan`, `periode`, `updated_at`, `created_at`) VALUES
-(1, 2, 'instagram', '5 jam', 'januari - maret', '12 June 2022', '12 June 2022'),
+(1, 5, 'instagram', '5 jam', 'januari - maret', '12 June 2022', '12 June 2022'),
 (2, 2, 'youtube', '5 jam', 'januari - maret', '12 June 2022', '12 June 2022'),
 (4, 2, 'facebook', '5 jam', 'januari - maret', '12 June 2022', '12 June 2022'),
 (5, 2, 'whatsapp', '5 jam', 'januari - maret', '12 June 2022', '12 June 2022'),
 (6, 2, 'whatsapp', '2 Jam', 'April - May', '12 June 2022', '12 June 2022'),
-(7, 2, 'tiktok', '4 Jam', 'April - May', '12 June 2022', '12 June 2022');
+(7, 2, 'tiktok', '4 Jam', 'April - May', '12 June 2022', '12 June 2022'),
+(9, 4, 'instagram', '2 Jam', 'Juni - Agustus', '13 June 2022', '13 June 2022'),
+(10, 1, 'instagram', '5 jam', 'januari - maret', '12 June 2022', '12 June 2022');
 
 -- --------------------------------------------------------
 
@@ -149,9 +150,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `full_name`, `email`, `password`, `picture`, `role_id`, `updated_at`, `created_at`) VALUES
-(1, 'Reehat System', 'reehat@admin.com', '$2y$10$KZ7GVdlfGhdo8DjdNyg64OomvhQSA2NaT9x9QWP.yBnqKrrQ8Ff.6', 'IMG-20220607-WA0016.jpeg', 1, '15 June 2022', '12 June 2022'),
-(2, 'Andaru Triadi', 'andarutr@gmail.com', '$2y$10$kyorCmQjhDsJsw.mQ5GCtuQdvJ8LwfXGAXb1nF/zh/lz/QQ/OBz0m', 'toonmecom_5736cc.jpeg', 2, '21 June 2022', '13 June 2022'),
-(3, 'Melda Yusnita', 'melda@gmail.com', '$2y$10$kyorCmQjhDsJsw.mQ5GCtuQdvJ8LwfXGAXb1nF/zh/lz/QQ/OBz0m', 'melda.jpeg', 2, '13 June 2022', '13 June 2022');
+(1, 'Admin', 'reehat@admin.com', '$2y$10$bPLMKJJblx0OKH/TjHMDEOBWfRJaSEfGtS0dhEUm0dxsIakLSdFkC', '00870045.jpg', 1, '24 June 2022', '12 June 2022'),
+(2, 'Melda Yusnita', 'melda@gmail.com', '$2y$10$DWxjfEjhH.XcqonH12B01evojMxOhT/FfwWQcrrEhjJCWiJfFm3Vu', 'melda.jpeg', 2, '12 June 2022', '12 June 2022'),
+(3, 'Bagus Prio', 'bagus@gmail.com', '$2y$10$t49tqaSUHVzh7C14nzHvfOBqotVXXty77LCW4vXgRCuGPDc5PHBdC', 'Vespa ride.png', 2, '12 June 2022', '12 June 2022'),
+(4, 'Andaru Triadi', 'andarutr@gmail.com', '$2y$10$butmaoPXt3d.FkruFGp0seD8NgkmWBZNrfYRLKq482YnFXIy0.opq', 'toonmecom_5736cc.jpeg', 2, '13 June 2022', '13 June 2022'),
+(5, 'Farhan Ardiansyah', 'hanhan@gmail.com', '$2y$10$dmc2X92GOVMCDpFd04x2bOVJGklAgvH6RUMldzCcxRHgf4qvvbTrO', 'default.png', 2, '25 June 2022', '25 June 2022');
 
 -- --------------------------------------------------------
 
@@ -180,8 +183,7 @@ INSERT INTO `webinars` (`id`, `title`, `thumbnail`, `description`, `mentor`, `co
 (1, 'Mengatasi Stress Akibat Tekanan Kerja', 'webinar_1.png', '<p>Coming Soon!</p>', 'Ghassani Salsabila, S.Psi', 85000, 'https://www.youtube.com/embed/DGUdLn0KBms', 'mengatasi-stress-akibat-tekanan-kerja', '12 June 2022', '12 June 2022'),
 (2, 'Menuju Hidup Produktif Dan Sehat Mental', 'webinar_2.png', '<p>Coming Soon!</p>', 'Shabrina Fitriandari, M.Psi', 85000, 'https://www.youtube.com/embed/DGUdLn0KBms', 'menuju-hidup-produktif-dan-sehat-mental', '12 June 2022', '12 June 2022'),
 (3, 'Melatih Emosi Dan Amarahmu Sebaik Mungkin', 'webinar_3.png', '<p>Coming Soon!</p>', 'Fadhilah Eryanda, M.PSi', 85000, 'https://www.youtube.com/embed/DGUdLn0KBms', 'melatih-emosi-dan-amarahmu-sebaik-mungkin', '12 June 2022', '12 June 2022'),
-(4, 'Mengatasi Sifat Perfeksionis Dan Merubahnya Menjadi Potensi', 'webinar_4.png', '<p>Coming Soon!</p>', 'Fionna Callista, S.Psi', 85000, 'https://www.youtube.com/embed/DGUdLn0KBms', 'mengatasi-sifat-perfeksionis-dan-merubahnya-menjadi-potensi', '12 June 2022', '12 June 2022'),
-(5, 'Mengatasi Trauma Inner Child', 'webinar_5.png', '<p>Coming Soon!</p>', 'Durah Amajida, S.Psi', 85000, 'https://www.youtube.com/embed/DGUdLn0KBms', 'mengatasi-trauma-inner-child', '12 June 2022', '12 June 2022');
+(4, 'Mengatasi Sifat Perfeksionis Dan Merubahnya Menjadi Potensi', 'webinar_4.png', '<p>Coming Soon!</p>', 'Fionna Callista, S.Psi', 85000, 'https://www.youtube.com/embed/DGUdLn0KBms', 'mengatasi-sifat-perfeksionis-dan-merubahnya-menjadi-potensi', '12 June 2022', '12 June 2022');
 
 --
 -- Indexes for dumped tables
@@ -231,13 +233,13 @@ ALTER TABLE `webinars`
 -- AUTO_INCREMENT untuk tabel `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `roles`
@@ -249,19 +251,19 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT untuk tabel `time_management`
 --
 ALTER TABLE `time_management`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `webinars`
 --
 ALTER TABLE `webinars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -22,18 +22,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Foreach Time Management -->
+                                <?php foreach($time_managements->result() as $time_management): ?>
                                 <tr>
-                                    <td><div class="smalls lg">Instagram</div></td>
-                                    <td><span class="smalls lg">3 Jam</span></td>
-                                    <td><span class="smalls lg">Juni - Juli</span></td>
-                                    <td><span class="smalls lg">22 Juni 2022</span></td>
-                                    <td><span class="smalls lg">22 Juni 2022</span></td>
+                                    <td><div class="smalls lg"><?= $aplikasi ?></div></td>
+                                    <td><span class="smalls lg"><?= $time_management->batas_penggunaan ?></span></td>
+                                    <td><span class="smalls lg"><?= $time_management->periode ?></span></td>
+                                    <td><span class="smalls lg"><?= $time_management->updated_at ?></span></td>
+                                    <td><span class="smalls lg"><?= $time_management->created_at ?></span></td>
                                     <td>
-                                        <a href="<?= base_url('user/time-management/delete/id'); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fas fa-trash"></i></a>
+                                        <a href="<?= base_url('user/time-management/delete'); ?>/<?= $time_management->id ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fas fa-trash"></i></a>
                                     </td>
                                 </tr>
-                                <!-- End Foreach -->
+                                <?php endforeach ?>
                             </tbody>
                         </table>
                     </div>

@@ -1,5 +1,6 @@
 <div class="row">
     <div class="col-xl-12 col-lg-12 col-md-12">
+        <?= $this->session->flashdata('time_msg'); ?>
         <div class="dashboard_wrap">
             <div class="row justify-content-between">
                 <div class="col-xl-8 col-lg-9 col-md-12">

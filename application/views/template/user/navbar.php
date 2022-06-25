@@ -55,11 +55,11 @@
                         <li>
                             <div class="btn-group account-drop">
                                 <a href="javascript:void(0);" class="crs_yuo12 btn btn-order-by-filt" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="/assets/img/account/{{ Auth::user()->picture }}" class="avater-img" alt="">
+                                    <img src="<?= base_url('assets/img/account'); ?>/<?= $user['picture']; ?>" class="avater-img" alt="">
                                 </a>
                                 <div class="dropdown-menu pull-right animated flipInX">
                                     <div class="drp_menu_headr">
-                                        <h4>Hi, {{ Auth::user()->full_name }}</h4>
+                                        <h4>Hi, <?= $user['full_name']; ?></h4>
                                     </div>
                                     <ul>
                                         <li><a href="/user/my-profile"><i class="fas fa-address-card"></i>My Profile</a></li>
@@ -80,23 +80,23 @@
                     
                     <li class="account-drop">
                         <a href="javascript:void(0);" class="crs_yuo12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="embos_45"><i class="fas fa-shopping-basket"></i><i class="embose_count">0</i></span>
+                            <span class="embos_45"><i class="fas fa-shopping-basket"></i><i class="embose_count"><?= $payment_notif ?></i></span>
                         </a>
                         <div class="dropdown-menu pull-right animated flipInX">
                             <div class="drp_menu_headr bg-purple">
                                 <h4>Pembayaran</h4>
                             </div>
-                            <!-- Foreach Payment -->
+                            <?php foreach($payments->result() as $payment): ?>
                             <div class="ground-list ground-hover-list">
                                 <div class="ground ground-list-single">
                                     <div class="ground-content">
-                                        <h6>-</h6>
-                                        <small>Rp-</small>
+                                        <h6><?= $payment->webinar; ?></h6>
+                                        <small>Rp<?= number_format($payment->cost,2,',','.'); ?></small>
                                         <a href="<?= base_url('user/pembayaran'); ?>" class="text-success">Bayar</a>
                                     </div>
                                 </div>
                             </div>
-                            <!-- End Foreach -->
+                            <?php endforeach ?>
                         </div>
                     </li>
                     <li class="account-drop">
@@ -125,11 +125,11 @@
                     <li>
                         <div class="btn-group account-drop">
                             <a href="javascript:void(0);" class="crs_yuo12 btn btn-order-by-filt" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="<?= base_url('assets/img/account/melda.jpeg'); ?>" class="avater-img" alt="">
+                                <img src="<?= base_url('assets/img/account'); ?>/<?= $user['picture']; ?>" class="avater-img" alt="">
                             </a>
                             <div class="dropdown-menu pull-right animated flipInX">
                                 <div class="drp_menu_headr">
-                                    <h4>Hi, Melda Yusnita</h4>
+                                    <h4>Hi, <?= $user['full_name']; ?></h4>
                                 </div>
                                 <ul>
                                     <li><a href="<?= base_url('user/my-profile'); ?>"><i class="fas fa-address-card"></i>My Profile</a></li>

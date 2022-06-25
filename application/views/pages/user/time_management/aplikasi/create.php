@@ -28,13 +28,13 @@
                                 <div class="form-group smalls">
                                     <label>Batas Penggunaan Aplikasi Instagram</label>
                                     <input type="text" class="form-control" name="batas_penggunaan" placeholder="Contoh: 5 Jam">
-                                    <!-- Validation Batas Penggunaan -->
+                                    <?= form_error('batas_penggunaan','<p class="text-danger">','</p>'); ?>
                                 </div>
                                 
                                 <div class="form-group smalls">
                                     <label>Periode</label>
                                     <input type="text" class="form-control" placeholder="Contoh: Januari - Maret" name="periode">
-                                    <!-- Validation Periode -->
+                                    <?= form_error('periode','<p class="text-danger">','</p>'); ?>
                                 </div>
                                 
                                 <button class="btn btn-primary">Create</button>
@@ -50,13 +50,13 @@
                                 <div class="form-group smalls">
                                     <label>Batas Penggunaan Aplikasi Youtube</label>
                                     <input type="text" class="form-control" name="batas_penggunaan" placeholder="Contoh: 5 Jam">
-                                    <!-- Validation Batas Penggunaan -->
+                                    <?= form_error('batas_penggunaan','<p class="text-danger">','</p>'); ?>
                                 </div>
                                 
                                 <div class="form-group smalls">
                                     <label>Periode</label>
                                     <input type="text" class="form-control" placeholder="Contoh: Januari - Maret" name="periode">
-                                    <!-- Validation Periode -->
+                                    <?= form_error('periode','<p class="text-danger">','</p>'); ?>
                                 </div>
                                 
                                 <button class="btn btn-primary">Create</button>
@@ -72,13 +72,13 @@
                                 <div class="form-group smalls">
                                     <label>Batas Penggunaan Aplikasi Tiktok</label>
                                     <input type="text" class="form-control" name="batas_penggunaan" placeholder="Contoh: 5 Jam">
-                                    <!-- Validation Batas Penggunaan -->
+                                    <?= form_error('batas_penggunaan','<p class="text-danger">','</p>'); ?>
                                 </div>
                                 
                                 <div class="form-group smalls">
                                     <label>Periode</label>
                                     <input type="text" class="form-control" placeholder="Contoh: Januari - Maret" name="periode">
-                                    <!-- Validation Periode -->
+                                    <?= form_error('periode','<p class="text-danger">','</p>'); ?>
                                 </div>
                                 
                                 <button class="btn btn-primary">Create</button>
@@ -94,13 +94,13 @@
                                 <div class="form-group smalls">
                                     <label>Batas Penggunaan Aplikasi Facebook</label>
                                     <input type="text" class="form-control" name="batas_penggunaan" placeholder="Contoh: 5 Jam">
-                                    <!-- Validation Batas Penggunaan -->
+                                    <?= form_error('batas_penggunaan','<p class="text-danger">','</p>'); ?>
                                 </div>
                                 
                                 <div class="form-group smalls">
                                     <label>Periode</label>
                                     <input type="text" class="form-control" placeholder="Contoh: Januari - Maret" name="periode">
-                                    <!-- Validation Periode -->
+                                    <?= form_error('periode','<p class="text-danger">','</p>'); ?>
                                 </div>
                                 
                                 <button class="btn btn-primary">Create</button>
@@ -116,13 +116,13 @@
                                 <div class="form-group smalls">
                                     <label>Batas Penggunaan Aplikasi Whatsapp</label>
                                     <input type="text" class="form-control" name="batas_penggunaan" placeholder="Contoh: 5 Jam">
-                                    <!-- Validation Batas Penggunaan -->
+                                    <?= form_error('batas_penggunaan','<p class="text-danger">','</p>'); ?>
                                 </div>
                                 
                                 <div class="form-group smalls">
                                     <label>Periode</label>
                                     <input type="text" class="form-control" placeholder="Contoh: Januari - Maret" name="periode">
-                                    <!-- Validation Periode -->
+                                    <?= form_error('periode','<p class="text-danger">','</p>'); ?>
                                 </div>
                                 
                                 <button class="btn btn-primary">Create</button>

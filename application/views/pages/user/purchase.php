@@ -21,19 +21,27 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Foreach Webinar -->
+                                <?php foreach($purchase->result() as $prch): ?>
                                 <tr>
-                                    <td><div class="smalls lg">Mengatasi Stress Akibat Tekanan Kerja</div></td>
-                                    <td><span class="smalls lg">Rp85.000,-</span></td>
-                                    <td><span class="smalls lg">22 Juni 2022</span></td>
+                                    <td><div class="smalls lg"><?= $prch->webinar ?></div></td>
+                                    <td><span class="smalls lg">Rp<?= number_format($prch->cost,2,',','.'); ?></span></td>
+                                    <td><span class="smalls lg"><?= $prch->created_at ?></span></td>
                                     <td><span class="smalls lg">
-                                        <a href="" class="badge badge-success">Sudah Bayar</a>
+                                        <?php if($prch->status == 'Sudah Bayar'): ?>
+                                        <a href="" class="badge badge-success"><?= $prch->status ?></a>
+                                        <?php else: ?>
+                                        <a href="" class="badge badge-danger"><?= $prch->status ?></a>
+                                        <?php endif ?>
                                     </span></td>
                                     <td>
-                                        <a href="<?= base_url('user/webinar/detail'); ?>" class="btn btn-sm btn-primary">Lihat</a>
+                                        <?php if($prch->status == 'Sudah Bayar'): ?>
+                                        <a href="<?= base_url('user/webinar'); ?>/<?= $prch->url ?>" class="btn btn-sm btn-primary">Lihat</a>
+                                        <?php else: ?>
+                                        -
+                                        <?php endif ?>
                                     </td>
                                 </tr>
-                                <!-- End Foreach -->
+                                <?php endforeach ?>
                             </tbody>
                         </table>
                     </div>

@@ -12,7 +12,7 @@
 		<section>
 		    <h1 class="text-center mb-5">Pilih Sesi Anda</h1>
 		    <div class="container">
-				<?= $this->session->flashdata('login_msg'); ?>
+				<?= $this->session->flashdata('auth_msg'); ?>
 		        <div class="row justify-content-center">
 		            <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
 		                <center>
